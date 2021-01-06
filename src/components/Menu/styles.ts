@@ -37,9 +37,6 @@ export const ListaLinks = styled.ul`
 `;
 
 export const ItemLink = styled.li`
-  padding: 15px;
-  cursor: pointer;
-
   & + & {
     margin-left: 15px;
   }

@@ -55,7 +55,11 @@ const Menu: React.FC = () => {
                   smooth={true}
                   duration={500}
                   spy={true}
-                  onSetActive={(to) => handleSessaoAtiva(to)}>
+                  onSetActive={(to) => handleSessaoAtiva(to)}
+                  style={{
+                    padding: 15,
+                    cursor: 'pointer',
+                  }}>
                   {personagem.nomePersonagem}
                 </Link>
               </ItemLink>

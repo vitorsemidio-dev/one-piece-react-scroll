@@ -1,6 +1,7 @@
 /** @format */
 
 import React from 'react';
+import { FaPlayCircle } from 'react-icons/fa';
 
 import {
   BackgroundContainer,
@@ -15,8 +16,6 @@ import {
   ImagemPersonagem,
   ImagemPersonagemContainer,
 } from './styles';
-
-import playVideoIcon from '../../assets/play-video.svg';
 
 interface SessaoPersonagemProps {
   id: string;
@@ -59,7 +58,7 @@ const SessaoPersonagem: React.FC<SessaoPersonagemProps> = ({
             {descricaoPersonagem}
           </DescricaoPersonagem>
           <InformacaoEpisodioContainer>
-            <img src={playVideoIcon} alt='Botão play' />
+            <FaPlayCircle size={100} color={corPrincipalPersonagem} />
             <InformacaoEpisodioConteudo>
               <NumeroEpisodio>Episódio {numeroEpisodio}</NumeroEpisodio>
               <TituloEpisodio>
