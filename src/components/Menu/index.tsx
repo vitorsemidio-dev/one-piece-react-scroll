@@ -1,6 +1,7 @@
 /** @format */
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
+import { Link } from 'react-scroll';
 
 import {
   Container,
@@ -12,50 +13,50 @@ import {
 
 import logoImg from '../../assets/Logo One Piece.png';
 
-import { Link } from 'react-scroll';
-
-const corPrincipalPersonagem = '#e65a29';
+import dadosPersonagens from '../../dados';
 
 const Menu: React.FC = () => {
   const personagens = useMemo(() => {
-    return [
-      {
-        nome: 'Luffy',
-        id: 'luffy',
-      },
-      {
-        nome: 'Robin',
-        id: 'robin',
-      },
-      {
-        nome: 'Sanji',
-        id: 'sanji',
-      },
-      {
-        nome: 'Nami',
-        id: 'nami',
-      },
-      {
-        nome: 'Zoro',
-        id: 'zoro',
-      },
-    ];
+    const nomes = dadosPersonagens.map((personagem) => {
+      const nomesSeparados = personagem.nomePersonagem.split(' ');
+
+      return {
+        ...personagem,
+        nomePersonagem: nomesSeparados[nomesSeparados.length - 1],
+      };
+    });
+    return nomes;
   }, []);
 
+  const [corPrincipalAtivada, setCorPrincipalAtivada] = useState('#fff');
+
+  const handleSessaoAtiva = (to: string) => {
+    const personagemAtivado = personagens.find(
+      (personagem) => personagem.id === to,
+    );
+
+    if (personagemAtivado) {
+      setCorPrincipalAtivada(personagemAtivado.corPrincipalPersonagem);
+    } else {
+      setCorPrincipalAtivada('#fff');
+    }
+  };
+
   return (
-    <Container corPrincipalPersonagem={corPrincipalPersonagem}>
+    <Container corPrincipalPersonagem={corPrincipalAtivada}>
       <Content>
         <img src={logoImg} alt='Logo One Piece' />
         <NavContainer>
           <ListaLinks>
             {personagens.map((personagem) => (
-              <ItemLink key={personagem.nome}>
+              <ItemLink key={personagem.nomePersonagem}>
                 <Link
                   to={personagem.id}
                   smooth={true}
                   duration={500}
-                  spy={true}>
-                  {personagem.nome}
+                  spy={true}
+                  onSetActive={(to) => handleSessaoAtiva(to)}>
+                  {personagem.nomePersonagem}
                 </Link>
               </ItemLink>
             ))}

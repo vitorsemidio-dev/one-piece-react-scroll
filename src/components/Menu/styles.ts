@@ -12,10 +12,9 @@ export const Container = styled.header<ContainerProps>`
   position: fixed;
   z-index: 10;
 
-  /* ${({ corPrincipalPersonagem }) => css`
+  ${({ corPrincipalPersonagem }) => css`
     background-image: linear-gradient(${corPrincipalPersonagem}, transparent);
-  `} */
-  background-image: linear-gradient(#fff, transparent);
+  `}
 
   padding: 0 15px;
   display: flex;

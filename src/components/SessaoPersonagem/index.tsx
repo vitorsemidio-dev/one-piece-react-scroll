@@ -61,7 +61,7 @@ const SessaoPersonagem: React.FC<SessaoPersonagemProps> = ({
           <InformacaoEpisodioContainer>
             <img src={playVideoIcon} alt='Botão play' />
             <InformacaoEpisodioConteudo>
-              <NumeroEpisodio>Episodio {numeroEpisodio}</NumeroEpisodio>
+              <NumeroEpisodio>Episódio {numeroEpisodio}</NumeroEpisodio>
               <TituloEpisodio>
                 {tituloEpisodio} <br /> {subTituloEpisodio}
               </TituloEpisodio>
