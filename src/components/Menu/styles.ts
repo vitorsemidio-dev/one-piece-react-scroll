@@ -9,10 +9,13 @@ interface ContainerProps {
 export const Container = styled.header<ContainerProps>`
   width: 100%;
   height: 100px;
+  position: fixed;
+  z-index: 10;
 
-  ${({ corPrincipalPersonagem }) => css`
+  /* ${({ corPrincipalPersonagem }) => css`
     background-image: linear-gradient(${corPrincipalPersonagem}, transparent);
-  `}
+  `} */
+  background-image: linear-gradient(#fff, transparent);
 
   padding: 0 15px;
   display: flex;
@@ -36,6 +39,7 @@ export const ListaLinks = styled.ul`
 
 export const ItemLink = styled.li`
   padding: 15px;
+  cursor: pointer;
 
   & + & {
     margin-left: 15px;

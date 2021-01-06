@@ -1,6 +1,6 @@
 /** @format */
 
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import {
   Container,
@@ -17,62 +17,48 @@ import { Link } from 'react-scroll';
 const corPrincipalPersonagem = '#e65a29';
 
 const Menu: React.FC = () => {
+  const personagens = useMemo(() => {
+    return [
+      {
+        nome: 'Luffy',
+        id: 'luffy',
+      },
+      {
+        nome: 'Sanji',
+        id: 'sanji',
+      },
+      {
+        nome: 'Robin',
+        id: 'robin',
+      },
+      {
+        nome: 'Nami',
+        id: 'nami',
+      },
+      {
+        nome: 'Zoro',
+        id: 'zoro',
+      },
+    ];
+  }, []);
+
   return (
     <Container corPrincipalPersonagem={corPrincipalPersonagem}>
       <Content>
         <img src={logoImg} alt='Logo One Piece' />
         <NavContainer>
           <ListaLinks>
-            <ItemLink>
-              <Link
-                to='luffy'
-                smooth={true}
-                duration={500}
-                spy={true}
-                offset={-80}>
-                Luffy
-              </Link>
-            </ItemLink>
-            <ItemLink>
-              <Link
-                to='sanji'
-                smooth={true}
-                duration={500}
-                spy={true}
-                offset={-80}>
-                Sanji
-              </Link>
-            </ItemLink>
-            <ItemLink>
-              <Link
-                to='robin'
-                smooth={true}
-                duration={500}
-                spy={true}
-                offset={-80}>
-                Robin
-              </Link>
-            </ItemLink>
-            <ItemLink>
-              <Link
-                to='nami'
-                smooth={true}
-                duration={500}
-                spy={true}
-                offset={-80}>
-                Nami
-              </Link>
-            </ItemLink>
-            <ItemLink>
-              <Link
-                to='zoro'
-                smooth={true}
-                duration={500}
-                spy={true}
-                offset={-80}>
-                Zoro
-              </Link>
-            </ItemLink>
+            {personagens.map((personagem) => (
+              <ItemLink key={personagem.nome}>
+                <Link
+                  to={personagem.id}
+                  smooth={true}
+                  duration={500}
+                  spy={true}>
+                  {personagem.nome}
+                </Link>
+              </ItemLink>
+            ))}
           </ListaLinks>
         </NavContainer>
       </Content>

@@ -1,6 +1,6 @@
 /** @format */
 
-export default {
+const colors = {
   luffy: {
     primary: '#E65A29',
     secondary: '#FEDB9B',
@@ -22,3 +22,5 @@ export default {
     secondary: '#E2F1C8',
   },
 };
+
+export default colors;

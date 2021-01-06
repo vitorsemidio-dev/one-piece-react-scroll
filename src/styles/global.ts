@@ -15,7 +15,6 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    background-color: #FEDB9B;
     font-family: 'Nunito', sans-serif;
     font-size: 24px;
     font-weight: bold;
