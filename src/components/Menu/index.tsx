@@ -24,12 +24,12 @@ const Menu: React.FC = () => {
         id: 'luffy',
       },
       {
-        nome: 'Sanji',
-        id: 'sanji',
-      },
-      {
         nome: 'Robin',
         id: 'robin',
+      },
+      {
+        nome: 'Sanji',
+        id: 'sanji',
       },
       {
         nome: 'Nami',

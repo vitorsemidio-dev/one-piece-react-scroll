@@ -15,8 +15,13 @@ const App: React.FC = () => {
     <>
       <GlobalStyle />
       <Menu />
-      {personagens.map((personagem) => (
-        <SessaoPersonagem key={personagem.id} {...personagem} />
+
+      {personagens.map((personagem, indice) => (
+        <SessaoPersonagem
+          key={personagem.id}
+          {...personagem}
+          trocaPosicao={indice % 2 === 1 ? true : false}
+        />
       ))}
     </>
   );

@@ -1,6 +1,6 @@
 /** @format */
 
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface BackgroundContainerProps {
   imagemFundoPersonagem: string;
@@ -8,6 +8,7 @@ interface BackgroundContainerProps {
 }
 
 export const BackgroundContainer = styled.section<BackgroundContainerProps>`
+  padding-top: 100px;
   height: 100vh;
 
   position: relative;
@@ -40,7 +41,11 @@ export const BackgroundContainer = styled.section<BackgroundContainerProps>`
   }
 `;
 
-export const ConteudoContainer = styled.div`
+interface ITrocaPosicao {
+  trocaPosicao: boolean;
+}
+
+export const ConteudoContainer = styled.div<ITrocaPosicao>`
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
@@ -48,18 +53,35 @@ export const ConteudoContainer = styled.div`
 
   display: flex;
   justify-content: space-between;
+
+  ${({ trocaPosicao }) =>
+    trocaPosicao &&
+    css`
+      flex-direction: row-reverse;
+    `}
 `;
 
-export const InformacaoContainer = styled.div``;
+export const InformacaoContainer = styled.div<ITrocaPosicao>`
+  display: flex;
+  flex-direction: column;
 
-export const NomePersonagem = styled.h2`
+  ${({ trocaPosicao }) =>
+    trocaPosicao &&
+    css`
+      align-items: flex-end;
+    `}
+`;
+
+export const NomePersonagem = styled.h2<ITrocaPosicao>`
+  text-align: ${({ trocaPosicao }) => (trocaPosicao ? 'right' : 'left')};
   font-size: 72px;
   width: 350px;
   text-transform: uppercase;
   margin-bottom: 32px;
 `;
 
-export const DescricaoPersonagem = styled.p`
+export const DescricaoPersonagem = styled.p<ITrocaPosicao>`
+  text-align: ${({ trocaPosicao }) => (trocaPosicao ? 'right' : 'left')};
   margin-bottom: 96px;
 `;
 

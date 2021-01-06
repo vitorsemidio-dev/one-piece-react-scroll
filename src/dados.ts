@@ -29,20 +29,6 @@ const personagens = [
     corSecondariaPersonagem: luffy.secondary,
   },
   {
-    id: 'sanji',
-    nomePersonagem: 'Vinsmoke Sanji',
-    descricaoPersonagem:
-      '"Perna Negra" Sanji, nascido como Vinsmoke Sanji, é o cozinheiro dos Piratas do Chapéu de Palha, assim como um antigo chefe de cozinha do Baratie. \nEle também é o terceiro filho e a quarta criança da Família Vinsmoke, tornando-o um príncipe do Reino Germa, até que ele oficialmente os renunciou duas vezes, uma vez quando criança e depois já adulto.',
-    numeroEpisodio: 803,
-    tituloEpisodio: 'Abandonando o passado',
-    subTituloEpisodio: 'Vinsmoke Sanji',
-    imagemPrincipalPersonagem: imagemPrincipalSanji,
-    imagemFundoPersonagem: imagemFundoSanji,
-    corPrincipalPersonagem: sanji.primary,
-    corSecondariaPersonagem: sanji.secondary,
-  },
-
-  {
     id: 'robin',
     nomePersonagem: 'Nico Robin',
     descricaoPersonagem:
@@ -54,6 +40,19 @@ const personagens = [
     imagemFundoPersonagem: imagemFundoRobin,
     corPrincipalPersonagem: robin.primary,
     corSecondariaPersonagem: robin.secondary,
+  },
+  {
+    id: 'sanji',
+    nomePersonagem: 'Vinsmoke Sanji',
+    descricaoPersonagem:
+      '"Perna Negra" Sanji, nascido como Vinsmoke Sanji, é o cozinheiro dos Piratas do Chapéu de Palha, assim como um antigo chefe de cozinha do Baratie. \nEle também é o terceiro filho e a quarta criança da Família Vinsmoke, tornando-o um príncipe do Reino Germa, até que ele oficialmente os renunciou duas vezes, uma vez quando criança e depois já adulto.',
+    numeroEpisodio: 803,
+    tituloEpisodio: 'Abandonando o passado',
+    subTituloEpisodio: 'Vinsmoke Sanji',
+    imagemPrincipalPersonagem: imagemPrincipalSanji,
+    imagemFundoPersonagem: imagemFundoSanji,
+    corPrincipalPersonagem: sanji.primary,
+    corSecondariaPersonagem: sanji.secondary,
   },
   {
     id: 'nami',

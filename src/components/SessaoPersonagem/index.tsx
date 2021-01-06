@@ -29,6 +29,7 @@ interface SessaoPersonagemProps {
   imagemPrincipalPersonagem: string;
   corPrincipalPersonagem: string;
   corSecondariaPersonagem: string;
+  trocaPosicao: boolean;
 }
 
 const SessaoPersonagem: React.FC<SessaoPersonagemProps> = ({
@@ -42,16 +43,21 @@ const SessaoPersonagem: React.FC<SessaoPersonagemProps> = ({
   imagemPrincipalPersonagem,
   corPrincipalPersonagem,
   corSecondariaPersonagem,
+  trocaPosicao,
 }) => {
   return (
     <BackgroundContainer
       id={id}
       imagemFundoPersonagem={imagemFundoPersonagem}
       corFundo={corSecondariaPersonagem}>
-      <ConteudoContainer>
-        <InformacaoContainer>
-          <NomePersonagem>{nomePersonagem}</NomePersonagem>
-          <DescricaoPersonagem>{descricaoPersonagem}</DescricaoPersonagem>
+      <ConteudoContainer trocaPosicao={trocaPosicao}>
+        <InformacaoContainer trocaPosicao={trocaPosicao}>
+          <NomePersonagem trocaPosicao={trocaPosicao}>
+            {nomePersonagem}
+          </NomePersonagem>
+          <DescricaoPersonagem trocaPosicao={trocaPosicao}>
+            {descricaoPersonagem}
+          </DescricaoPersonagem>
           <InformacaoEpisodioContainer>
             <img src={playVideoIcon} alt='Botão play' />
             <InformacaoEpisodioConteudo>
